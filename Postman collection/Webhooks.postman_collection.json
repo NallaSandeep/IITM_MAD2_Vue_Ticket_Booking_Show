@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "68264ee6-630c-4e64-a176-36662a974515",
+		"name": "Webhooks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1910973"
+	},
+	"item": [
+		{
+			"name": "Google chat webhook",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"Postman test1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://chat.googleapis.com/v1/spaces/AAAAIKCiR8g/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=N8lZRV4ZqD6ixXedGvegQTf7iLoN9yFs4YjPZtWyV8E",
+					"protocol": "https",
+					"host": [
+						"chat",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"v1",
+						"spaces",
+						"AAAAIKCiR8g",
+						"messages"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI"
+						},
+						{
+							"key": "token",
+							"value": "N8lZRV4ZqD6ixXedGvegQTf7iLoN9yFs4YjPZtWyV8E"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "2dd30b7c-9038-4e38-ad8f-69fb54e21991",
+		"name": "Bookings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1910973"
+	},
+	"item": [
+		{
+			"name": "Create booking",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"count\":15\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/12/theatre/15/show/2/booking",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"12",
+						"theatre",
+						"15",
+						"show",
+						"2",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get bookings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/12/bookings?page=1&size=8",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"12",
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get booking pages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/12/bookings/pages?size=8",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"12",
+						"bookings",
+						"pages"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get show bookings",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/22/theatre/34/show/22/bookings?page=1&size=8",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"22",
+						"theatre",
+						"34",
+						"show",
+						"22",
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get show bookings Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/22/theatre/34/show/21/bookings/pages?size=8",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"22",
+						"theatre",
+						"34",
+						"show",
+						"21",
+						"bookings",
+						"pages"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

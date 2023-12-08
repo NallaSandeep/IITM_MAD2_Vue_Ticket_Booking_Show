@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Monthly Entertainment Report</title>
+        <style>
+            table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Greetings,</p>
+        <br>
+        {% if noRecords %}
+            <p>No records available for the following period.</p>
+        {% else %}
+            <p>Please find the attached show bookings report.</p>
+            <p>Show time: {{ showStartTime }}</p>
+        {% endif %}
+        <br>
+        <p>Thanks</p>
+        <p>Team MyShow</p>
+    </body>
+</html>

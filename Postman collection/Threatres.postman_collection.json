@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "f3061142-b888-477e-8ad6-5015a8f9160b",
+		"name": "Threatres",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1910973"
+	},
+	"item": [
+		{
+			"name": "Create theatre",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\":\"Sandeep Nalla\",\r\n\t\"area\":\"Mythri Vanam\",\r\n    \"city\":\"Siddipet\",\r\n    \"capacity\": 250\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/22/theatre",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"22",
+						"theatre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate theatre report",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/22/theatre/15/report?startTime=2023-09-08%2020%3A23&endTime=2023-09-28%2020%3A23",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"22",
+						"theatre",
+						"15",
+						"report"
+					],
+					"query": [
+						{
+							"key": "startTime",
+							"value": "2023-09-08%2020%3A23"
+						},
+						{
+							"key": "endTime",
+							"value": "2023-09-28%2020%3A23"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update theatre",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\":\"Sandeep Nalla\",\r\n\t\"area\":\"Mythri Vanam\",\r\n    \"city\":\"Siddipet\",\r\n    \"capacity\": 250\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/12/theatre/15",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"12",
+						"theatre",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get theatre",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/22/theatre/15",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"22",
+						"theatre",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get theatres",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/23/theatres?page=1&size=8",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"23",
+						"theatres"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "size",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get theatre pages",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/1/theatres/pages?size=8",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"1",
+						"theatres",
+						"pages"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete theatre",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authentication-Token",
+						"value": "{{jwtToken}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/12/theatre/15",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"12",
+						"theatre",
+						"15"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

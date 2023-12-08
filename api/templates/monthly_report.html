@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Monthly Entertainment Report</title>
+        <style>
+            table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>{{ monthName }} - Monthly Entertainment Report</h1>
+        <p>User name: {{user.username}}</p>
+        <p>Email: {{user.email}}</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Show Name</th>
+                    <th>Timing</th>
+                    <th>Rating</th>
+                    <th>#Tickets</th>
+                    <th>Earning</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for showName, showStartTime, showRating, showPrice, bookingCount in booking_shows %}
+                <tr>
+                    <td>{{ showName }}</td>
+                    <td>{{ showStartTime }}</td>
+                    <td>{{ showRating }}</td>
+                    <td>{{ bookingCount }}</td>
+                    <td>{{ showPrice * bookingCount }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "b8702fc0-662f-46a6-b8e3-38fcf0c4fa99",
+		"name": "Auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1910973"
+	},
+	"item": [
+		{
+			"name": "Register JWT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Anitha Nalla1",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "anitha919@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "nallasandeep",
+							"type": "text"
+						},
+						{
+							"key": "isAdmin",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/signup",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login JWT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "Anitha Nalla1",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "anitha917@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "nallasandeep",
+							"type": "text"
+						},
+						{
+							"key": "isAdmin",
+							"value": "true",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseUrl}}/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// Check if the response is valid JSON",
+					"if (pm.response.headers.get(\"Content-Type\") === \"application/json\") {",
+					"    // Parse the JSON response body",
+					"    var responseBody = pm.response.json();",
+					"",
+					"    // Check if the JWT token field exists in the response",
+					"    if (responseBody && responseBody.token) {",
+					"        // Set the JWT token as a global variable",
+					"        pm.globals.set(\"jwtToken\", responseBody.token);",
+					"    }",
+					"}",
+					""
+				]
+			}
+		}
+	]
+}
